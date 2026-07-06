@@ -1,0 +1,240 @@
+.sched-item {
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+/* 到期项左边框高亮 */
+.sched-item--due {
+  border-left: 3px solid var(--terracotta);
+}
+
+.sched-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.sched-head-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sched-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.sched-cat {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.sched-head-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.sched-interval {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--terracotta);
+  background: var(--terracotta-soft);
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+.sched-chevron {
+  color: var(--muted);
+  transition: transform 0.25s ease;
+}
+
+.sched-chevron--open {
+  transform: rotate(180deg);
+}
+
+/* 元信息行 */
+.sched-meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.sched-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sched-meta-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.sched-meta-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.sched-meta-value--due {
+  color: var(--terracotta);
+}
+
+/* 状态标签 */
+.sched-status-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 8px;
+  letter-spacing: 0.03em;
+}
+
+.sched-status-tag--due {
+  color: var(--terracotta);
+  background: var(--terracotta-soft);
+}
+
+.sched-status-tag--idle {
+  color: var(--muted);
+  background: var(--bg-warm);
+}
+
+/* 展开编辑区 */
+.sched-edit {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+  animation: fadeUp 0.25s ease;
+}
+
+.sched-edit-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+
+/* 周期预设标签 */
+.sched-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.sched-preset {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: var(--bg-warm);
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.sched-preset--active {
+  color: var(--terracotta);
+  background: var(--terracotta-soft);
+  border-color: var(--terracotta-light);
+  font-weight: 600;
+}
+
+/* 自定义天数 */
+.sched-custom {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.sched-custom-input {
+  flex: 1;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.sched-custom-input:focus {
+  border-color: var(--terracotta-light);
+}
+
+.sched-custom-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--bg-warm);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.sched-custom-btn:disabled {
+  opacity: 0.4;
+}
+
+.sched-custom-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* 操作按钮 */
+.sched-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sched-act {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: var(--bg-warm);
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.15s;
+}
+
+.sched-act:active {
+  transform: scale(0.95);
+}
+
+.sched-act--done {
+  color: var(--sage);
+  background: var(--sage-soft);
+  font-weight: 600;
+}
+
+.sched-act--del {
+  color: var(--terracotta);
+}
+
+/* 入场动画复用 Module.css 的 fadeUp */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

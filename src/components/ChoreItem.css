@@ -1,0 +1,78 @@
+.chore-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.chore-item--done {
+  background: var(--bg-warm);
+  border-color: var(--line-soft);
+}
+
+/* 勾选圆圈 */
+.chore-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chore-item--done .chore-check {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+.check-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.check-path {
+  stroke: #fff;
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  transition: stroke-dashoffset 0.3s ease 0.05s;
+}
+
+.chore-item--done .check-path {
+  stroke-dashoffset: 0;
+}
+
+/* 文本区 */
+.chore-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.chore-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: all 0.25s ease;
+}
+
+.chore-item--done .chore-title {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--terracotta-light);
+}
+
+.chore-cat {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}

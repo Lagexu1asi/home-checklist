@@ -1,0 +1,128 @@
+.inspect-item {
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+/* 状态色条 */
+.inspect-item--ok {
+  border-left-color: var(--sage);
+}
+
+.inspect-item--issue {
+  border-left-color: var(--terracotta);
+  background: #fdf6f2;
+}
+
+.inspect-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.inspect-area {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+/* 状态标签按钮 */
+.inspect-status {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--st-color, var(--muted));
+  background: color-mix(in srgb, var(--st-color, var(--muted)) 12%, transparent);
+  padding: 4px 12px;
+  border-radius: 12px;
+  letter-spacing: 0.05em;
+  transition: transform 0.15s;
+}
+
+.inspect-status:active {
+  transform: scale(0.92);
+}
+
+.inspect-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+/* 已有备注展示 */
+.inspect-note {
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--bg-warm);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  margin-top: 8px;
+}
+
+/* 操作按钮区 */
+.inspect-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.inspect-act {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: var(--bg-warm);
+  padding: 5px 12px;
+  border-radius: 8px;
+  transition: all 0.15s;
+}
+
+.inspect-act:active {
+  transform: scale(0.95);
+}
+
+.inspect-act--del {
+  color: var(--terracotta);
+}
+
+/* 备注编辑 */
+.inspect-note-edit {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.inspect-note-edit input {
+  flex: 1;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.inspect-note-edit input:focus {
+  border-color: var(--sage-light);
+}
+
+.note-save {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--sage);
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.note-save:active {
+  transform: scale(0.95);
+}
