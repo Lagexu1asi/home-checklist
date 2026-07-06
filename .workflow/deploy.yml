@@ -1,0 +1,38 @@
+name: deploy-to-gitee-pages
+displayName: 部署到 Gitee Pages
+
+# 触发条件:推送到 main 分支
+triggers:
+  push:
+    branches:
+      include:
+        - main
+
+# 构建并部署到 Gitee Pages 服务
+stages:
+  - name: build
+    displayName: 构建
+    steps:
+      - step: build@nodejs
+        name: build-nodejs
+        displayName: npm 安装与构建
+        inputs:
+          nodeVersion: 20
+          commands: |
+            npm ci
+            npm run build
+          artifacts:
+            - name: dist
+              path: ./dist
+              compress: false
+
+  - name: deploy
+    displayName: 部署
+    dependsOn: build
+    steps:
+      - step: publish@pages
+        name: publish-pages
+        displayName: 发布到 Gitee Pages
+        inputs:
+          artifact: dist
+          target: ./

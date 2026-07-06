@@ -3,7 +3,9 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 // Vite 配置:集成 React 插件与 PWA 自动生成
+// base 设为仓库名,适配 GitHub Pages 子路径部署(https://lagexu1asi.github.io/what-to-do/)
 export default defineConfig({
+  base: "/what-to-do/",
   plugins: [
     react(),
     VitePWA({
@@ -17,8 +19,8 @@ export default defineConfig({
         background_color: "#FAF7F2",
         display: "standalone",
         orientation: "portrait",
-        start_url: "/",
-        scope: "/",
+        start_url: "./",
+        scope: "./",
         lang: "zh-CN",
         icons: [
           { src: "icon-192.png", sizes: "192x192", type: "image/png" },
